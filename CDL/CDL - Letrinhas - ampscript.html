@@ -1,0 +1,13 @@
+%%[ 
+SET @data_extension = "INFANTIL - Base landing page" 
+SET @nome = RequestParameter("nome") 
+SET @email = RequestParameter("email") 
+SET @option1 = "true" 
+SET @option2 = RequestParameter("INF_familia") 
+SET @option3 = RequestParameter("INF_professor") 
+SET @option4 = RequestParameter("INF_interessado") 
+IF NOT EMPTY(@email) THEN 
+SET @success = UpsertData( @data_extension, 1, 'nome', @nome, 'email', @email, 'newsletrinhas', @option1, 'INF_familia',
+@option2, 'INF_professor', @option3, 'INF_interessado', @option4 )
+]%% 
+%%[ ENDIF ]%%

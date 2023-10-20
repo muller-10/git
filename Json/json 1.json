@@ -1,0 +1,14 @@
+{
+    "data": {
+      "type": "profile",
+      "attributes": {
+        "email": "final.segment@cad.com",
+        "phone_number": "+51999499999",
+        "first_name": "teste",
+        "last_name": "segment",
+        "properties": {
+          "origem": "form-cupom-cucc"
+        }
+      }
+    }
+  }

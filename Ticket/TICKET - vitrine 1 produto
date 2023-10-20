@@ -1,0 +1,748 @@
+%%[
+VAR @sigla, @imagem, @descricao, @titulo, @utm, @tshop
+
+SET @sigla = sigla 
+SET @imagem = imagem
+SET @descricao = descricao 
+SET @titulo = titulo
+SET @utm = utm 
+SET @tshop = tshop
+
+]%%
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+    ReadMsgBody {
+        width: 100%;
+    }
+
+    .ExternalClass {
+        width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+        line-height: 100%;
+    }
+
+    body {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        margin: 0 !important;
+    }
+
+    p {
+        margin: 1em 0;
+    }
+
+    table td {
+        border-collapse: collapse;
+    }
+
+    img {
+        outline: 0;
+    }
+
+    a img {
+        border: none;
+    }
+
+    @-ms-viewport {
+        width: device-width;
+    }
+</style>
+<style type="text/css">
+    @media only screen and (max-width: 480px) {
+        .container {
+            width: 100% !important;
+        }
+
+        .footer {
+            width: auto !important;
+            margin-left: 0;
+        }
+
+        .mobile-hidden {
+            display: none !important;
+        }
+
+        .logo {
+            display: block !important;
+            padding: 0 !important;
+        }
+
+        img {
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: auto !important;
+        }
+
+        .header img {
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: auto !important;
+        }
+
+        .photo img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        .drop {
+            display: block !important;
+            width: 100% !important;
+            float: left;
+            clear: both;
+        }
+
+        .footerlogo {
+            display: block !important;
+            width: 100% !important;
+            padding-top: 15px;
+            float: left;
+            clear: both;
+        }
+
+        .nav4,
+        .nav5,
+        .nav6 {
+            display: none !important;
+        }
+
+        .tableBlock {
+            width: 100% !important;
+        }
+
+        .responsive-td {
+            width: 100% !important;
+            display: block !important;
+            padding: 0 !important;
+        }
+
+        .fluid,
+        .fluid-centered {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .fluid-centered {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+        body,
+        .tb_properties {
+            font-family: Arial !important;
+            font-size: 16px !important;
+            color: #202020 !important;
+            line-height: 1.5 !important;
+            padding: 0px !important;
+        }
+
+        .buttonstyles {
+            font-family: Arial, helvetica, sans-serif !important;
+            font-size: 16px !important;
+            color: #FFFFFF !important;
+            padding: 10px 30px !important;
+        }
+
+        h1 {
+            font-family: Arial !important;
+            font-size: 22px !important;
+            color: #202020 !important;
+            line-height: 1 !important;
+        }
+
+        h2 {
+            font-family: Arial !important;
+            font-size: 20px !important;
+            color: #202020 !important;
+            line-height: 1 !important;
+        }
+
+        h3 {
+            font-family: Arial !important;
+            font-size: 18px !important;
+            color: #202020 !important;
+            line-height: 1 !important;
+        }
+
+        a:not(.buttonstyles) {
+            line-height: 1 !important;
+        }
+
+        .mobile-hidden {
+            display: none !important;
+        }
+
+        .responsive-td {
+            width: 100% !important;
+            display: block !important;
+            padding: 0 !important;
+        }
+
+        /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+    }
+
+    @media only screen and (max-width: 640px) {
+        .container {
+            width: 100% !important;
+        }
+
+        .mobile-hidden {
+            display: none !important;
+        }
+
+        .logo {
+            display: block !important;
+            padding: 0 !important;
+        }
+
+        .photo img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .nav5,
+        .nav6 {
+            display: none !important;
+        }
+
+        .fluid,
+        .fluid-centered {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .fluid-centered {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ticket-center-mobile {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .mobile-media {
+            width: 70% !important;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .mobile-media2 {
+            width: 80% !important;
+        }
+
+        .align-content-08-09 {
+            display: block;
+            text-align: center !important;
+            margin-left: 0 !important;
+            padding: 0 40px;
+        }
+    }
+</style>
+<!--[if mso]>
+    <style type="text/css">
+        /* Begin Outlook Font Fix */
+            body, table, td {
+               font-family : Arial, helvetica, sans-serif;
+               line-height : 100%;
+               font-size : 16px;
+               color : #252525;
+            }
+        /* End Outlook Font Fix */
+    </style>
+  <![endif]-->
+
+
+
+<div style="font-size:0; line-height:0;">
+    <custom name="opencounter" type="tracking">
+        <custom name="usermatch" type="tracking"></custom>
+    </custom>
+</div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+
+    <tr>
+        <td align="center" valign="top">
+            <custom type="header">
+            </custom>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+
+                <tr>
+                    <td>
+                        <table class="tb_properties border_style"
+                            style="background-color:#FFFFFF;font-size : 16px; font-family : Arial, helvetica, sans-serif; line-height : 100%; color : #252525; "
+                            cellspacing="0" cellpadding="0" bgcolor="#ffffff" width="100%">
+
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                                        <tr>
+                                            <!-- added padding here -->
+                                            <td class="content_padding" style="padding : 0px; ">
+                                                <!-- end of comment -->
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                                                    <tr> <!-- top slot -->
+                                                        <td align="center" class="header" valign="top">
+                                                            <table align="left" border="0" cellpadding="0"
+                                                                cellspacing="0" width="100%">
+
+                                                                <tr>
+                                                                    <td align="left" valign="top">
+                                                                        <table cellspacing="0" cellpadding="0"
+                                                                            style="width:100%">
+
+                                                                            <tr>
+                                                                                <td class="responsive-td" valign="top"
+                                                                                    style="width: 100%;">
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="background-color: transparent; min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td style="padding: 10px 10px 20px; "
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <table cellspacing="0"
+                                                                                                    cellpadding="0"
+                                                                                                    role="presentation"
+                                                                                                    style="width: 100%;">
+
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <table
+                                                                                                                cellspacing="0"
+                                                                                                                cellpadding="0"
+                                                                                                                role="presentation"
+                                                                                                                style="width: 100%;">
+
+                                                                                                                <tr>
+                                                                                                                    <td valign="top"
+                                                                                                                        style="width: 50%; padding-right: 3px;">
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            width="100%"
+                                                                                                                            role="presentation"
+                                                                                                                            style="min-width: 100%; "
+                                                                                                                            class="stylingblock-content-wrapper">
+
+                                                                                                                            <tr>
+                                                                                                                                <td
+                                                                                                                                    class="stylingblock-content-wrapper camarker-inner">
+
+                                                                                                                                </td>
+                                                                                                                            </tr>
+
+                                                                                                                        </table>
+                                                                                                                    </td>
+
+                                                                                                                </tr>
+
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                    </table>
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="background-color: transparent; min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td style="padding: 40px 50px; "
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <div
+                                                                                                    style="line-height: 100%; text-align: center;">
+                                                                                                    <span
+                                                                                                        style="font-size:26px; line-height: 120%;"><b>Seu
+                                                                                                            carrinho vai
+                                                                                                            expirar,</b></span><br>
+                                                                                                    &nbsp;
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    style="line-height: 100%; text-align: center;">
+                                                                                                    <span
+                                                                                                        style="font-size:18px; line-height: 120%;"><b>você
+                                                                                                            tem um
+                                                                                                            pedido te
+                                                                                                            esperando,
+                                                                                                            garanta seu
+                                                                                                            produto
+                                                                                                            com taxa
+                                                                                                            zero hoje
+                                                                                                            mesmo!</b></span>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <table width="100%"
+                                                                                                    cellspacing="0"
+                                                                                                    cellpadding="0"
+                                                                                                    role="presentation">
+
+                                                                                                    <tr>
+                                                                                                        <td
+                                                                                                            align="center">
+                                                                                                            <a href="%%=v(@url_produto)=%%"
+                                                                                                                title=""
+                                                                                                                alias=""
+                                                                                                                conversion="false"
+                                                                                                                data-linkto="https://">
+                                                                                                                <img src="%%=v(@imagem_produto)=%%"
+                                                                                                                    alt=""
+                                                                                                                    height="247"
+                                                                                                                    width="153"
+                                                                                                                    style="display: block; padding: 0px; text-align: center; height: 247px; width: 153px; border: 0px;"></a>
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="background-color: transparent; min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td style="padding: 30px 50px; "
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <div
+                                                                                                    style="line-height: 100%; text-align: center;">
+                                                                                                    <b><span
+                                                                                                            style="font-size:20px;">%%=v(@titulo_produto)=%%</span></b><br>
+                                                                                                    <br>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    style="line-height: 150%; text-align: center;">
+                                                                                                    <span
+                                                                                                        style="font-size:13px;">%%=v(@descricao_produto)=%%</span>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="background-color: transparent; min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td style="padding: 0px 10px 20px; "
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <table cellspacing="0"
+                                                                                                    cellpadding="0"
+                                                                                                    role="presentation"
+                                                                                                    style="width: 100%;">
+
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <table
+                                                                                                                cellspacing="0"
+                                                                                                                cellpadding="0"
+                                                                                                                role="presentation"
+                                                                                                                style="width: 100%;">
+
+                                                                                                                <tr>
+                                                                                                                    <td valign="top"
+                                                                                                                        class="responsive-td"
+                                                                                                                        style="width: 50%; padding-right: 3px;">
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            width="100%"
+                                                                                                                            role="presentation"
+                                                                                                                            style="background-color: transparent; min-width: 100%; "
+                                                                                                                            class="stylingblock-content-wrapper">
+
+                                                                                                                            <tr>
+                                                                                                                                <td style="padding: 10px; "
+                                                                                                                                    class="stylingblock-content-wrapper camarker-inner">
+                                                                                                                                    <table
+                                                                                                                                        width="100%"
+                                                                                                                                        border="0"
+                                                                                                                                        cellspacing="0"
+                                                                                                                                        cellpadding="0"
+                                                                                                                                        role="presentation">
+
+                                                                                                                                        <tr>
+                                                                                                                                            <td
+                                                                                                                                                align="center">
+                                                                                                                                                <table
+                                                                                                                                                    border="0"
+                                                                                                                                                    cellspacing="0"
+                                                                                                                                                    cellpadding="0"
+                                                                                                                                                    role="presentation">
+
+                                                                                                                                                    <tr>
+                                                                                                                                                        <td class="innertd buttonblock"
+                                                                                                                                                            bgcolor="#FF220D"
+                                                                                                                                                            style=" border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px; background-color: #FF220D;">
+                                                                                                                                                            <a style=" font-size: 16px; font-family: Arial, helvetica, sans-serif; color: #FFFFFF; text-align: center; text-decoration: none; display: block; font-weight: 700; background-color: #FF220D; border: 1px solid #FF220D; padding: 10px 40px; border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px;"
+                                                                                                                                                                target="_blank"
+                                                                                                                                                                class="buttonstyles"
+                                                                                                                                                                href="http:/#"
+                                                                                                                                                                title=""
+                                                                                                                                                                alias=""
+                                                                                                                                                                conversion="false"
+                                                                                                                                                                data-linkto="http://">Continue
+                                                                                                                                                                sua
+                                                                                                                                                                compra</a>
+                                                                                                                                                        </td>
+                                                                                                                                                    </tr>
+
+                                                                                                                                                </table>
+                                                                                                                                            </td>
+                                                                                                                                        </tr>
+
+                                                                                                                                    </table>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+
+                                                                                                                        </table>
+                                                                                                                    </td>
+                                                                                                                    <td valign="top"
+                                                                                                                        class="responsive-td"
+                                                                                                                        style="width: 50%; padding-left: 3px;">
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            width="100%"
+                                                                                                                            role="presentation"
+                                                                                                                            style="background-color: transparent; min-width: 100%; "
+                                                                                                                            class="stylingblock-content-wrapper">
+
+                                                                                                                            <tr>
+                                                                                                                                <td style="padding: 10px; "
+                                                                                                                                    class="stylingblock-content-wrapper camarker-inner">
+                                                                                                                                    <table
+                                                                                                                                        width="100%"
+                                                                                                                                        border="0"
+                                                                                                                                        cellspacing="0"
+                                                                                                                                        cellpadding="0"
+                                                                                                                                        role="presentation">
+
+                                                                                                                                        <tr>
+                                                                                                                                            <td
+                                                                                                                                                align="center">
+                                                                                                                                                <table
+                                                                                                                                                    border="0"
+                                                                                                                                                    cellspacing="0"
+                                                                                                                                                    cellpadding="0"
+                                                                                                                                                    role="presentation">
+
+                                                                                                                                                    <tr>
+                                                                                                                                                        <td class="innertd buttonblock"
+                                                                                                                                                            bgcolor="#2AB33F"
+                                                                                                                                                            style=" border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px; background-color: #2AB33F;">
+                                                                                                                                                            <a style=" font-size: 14px; font-family: Arial, helvetica, sans-serif; color: #FFFFFF; text-align: center; text-decoration: none; display: block; font-weight: 700; background-color: #2AB33F; border: 1px solid #2AB33F; padding: 10px 30px; border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px;"
+                                                                                                                                                                target="_blank"
+                                                                                                                                                                class="buttonstyles"
+                                                                                                                                                                href="http://link.whatsapp.com/?utm_source=mktcloud&utm_medium=email&utm_campaign=abandono-carrinho-email-02&utm_content=recuperacao-carrinho_abandono-carrinho-email-02__body_botao_whatsapp_"
+                                                                                                                                                                title=""
+                                                                                                                                                                alias=""
+                                                                                                                                                                conversion="false"
+                                                                                                                                                                data-linkto="http://">Fale
+                                                                                                                                                                conosco
+                                                                                                                                                                pelo
+                                                                                                                                                                WhatsApp</a>
+                                                                                                                                                        </td>
+                                                                                                                                                    </tr>
+
+                                                                                                                                                </table>
+                                                                                                                                            </td>
+                                                                                                                                        </tr>
+
+                                                                                                                                    </table>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+
+                                                                                                                        </table>
+                                                                                                                    </td>
+                                                                                                                </tr>
+
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+
+
+
+                                                                                    <table cellpadding="0"
+                                                                                        cellspacing="0" width="100%"
+                                                                                        role="presentation"
+                                                                                        style="background-color: #FFFFFF; border: 0px; min-width: 100%; "
+                                                                                        class="stylingblock-content-wrapper">
+
+                                                                                        <tr>
+                                                                                            <td style="padding: 5px 30px 10px; "
+                                                                                                class="stylingblock-content-wrapper camarker-inner">
+                                                                                                <table cellspacing="0"
+                                                                                                    cellpadding="0"
+                                                                                                    role="presentation"
+                                                                                                    style="width: 100%;">
+
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <table
+                                                                                                                cellspacing="0"
+                                                                                                                cellpadding="0"
+                                                                                                                role="presentation"
+                                                                                                                style="width: 100%;">
+
+                                                                                                                <tr>
+                                                                                                                    <td valign="top"
+                                                                                                                        class="responsive-td"
+                                                                                                                        style="width: 50%; padding-right: 3px;">
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            width="100%"
+                                                                                                                            role="presentation"
+                                                                                                                            style="background-color: transparent; min-width: 100%; "
+                                                                                                                            class="stylingblock-content-wrapper">
+
+                                                                                                                            <tr>
+                                                                                                                                <td style="padding: 0px 0px 10px; "
+                                                                                                                                    class="stylingblock-content-wrapper camarker-inner">
+                                                                                                                                    <style>
+                                                                                                                                        @media(max-width: 600px) {
+                                                                                                                                            .mobile-media {
+                                                                                                                                                width: 70% !important;
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    </style>
+
+                                                                                                                                </td>
+                                                                                                                            </tr>
+
+                                                                                                                        </table>
+                                                                                                                    </td>
+                                                                                                                    <td valign="top"
+                                                                                                                        class="responsive-td"
+                                                                                                                        style="width: 50%; padding-left: 3px;">
+                                                                                                                        <table
+                                                                                                                            cellpadding="0"
+                                                                                                                            cellspacing="0"
+                                                                                                                            width="100%"
+                                                                                                                            role="presentation"
+                                                                                                                            style="min-width: 100%; "
+                                                                                                                            class="stylingblock-content-wrapper">
+
+                                                                                                                            <tr>
+                                                                                                                                <td
+                                                                                                                                    class="stylingblock-content-wrapper camarker-inner">
+                                                                                                                                    <style>
+                                                                                                                                        @media(max-width: 600px) {
+                                                                                                                                            .mobile-media2 {
+                                                                                                                                                width: 80% !important;
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    </style>
+
+
+
+                                                                                                                                </td>
+                                                                                                                            </tr>
+
+                                                                                                                        </table>
+                                                                                                                    </td>
+                                                                                                                </tr>
+
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+
+
+</table>

@@ -1,0 +1,423 @@
+%%[
+SET @data_extension = "PesquisaProduto_CAD"
+SET @id = RequestParameter("id")
+SET @proposito_produto = RequestParameter("proposito_produto")
+SET @proposito_atendido = RequestParameter("proposito_atendido")
+SET @comentario_da_nota = RequestParameter("comentario_da_nota")
+IF NOT EMPTY(@id) THEN
+SET @success = UpsertData( @data_extension, 1, 'id', @id, 'proposito_produto', @proposito_produto, 'proposito_atendido', @proposito_atendido, 'comentario_da_nota', @comentario_da_nota)
+]%%
+%%[ ENDIF ]%%
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Obrigado</title>
+    <link rel="icon" type="favicon"
+        href="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/2/faa3079c-0d43-47fa-a5c2-0f1017bd3d3c.jpg">
+</head>
+
+<style>
+    * {
+        margin: 3px;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        line-height: 25px;
+        align-items: center;
+    }
+
+    main {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    #logo-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 80%;
+        margin: 0 auto;
+
+    }
+
+    .container_contato {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+    }
+
+    .container_contato>input {
+        margin-top: 10px;
+        padding-left: 10px;
+        border: 1px solid black;
+
+
+    }
+
+    #Logo-header {
+        display: flex;
+        max-width: 100%;
+
+    }
+
+
+
+    #text-intro {
+        width: 60%;
+        margin: 0 auto;
+
+    }
+
+    #text-intro h1 {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+
+
+    }
+
+    #text-info p {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #motivo p {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #captcha {
+        display: flex;
+        margin-top: 1rem;
+        margin-left: 150px;
+        text-decoration: line-through;
+    }
+
+    .captcha-input {
+        display: flex;
+    }
+
+    #txtInput {
+        background-color: #f0f0f0;
+        border: 0;
+        border-radius: 0;
+        border-top: 1px solid #aaa;
+        height: 40px;
+        width: 200px;
+        margin-left: 150px;
+        margin-right: 10px;
+    }
+
+
+    #btnrefresh {
+        height: 50px;
+        width: 80px;
+        white-space: nowrap;
+        cursor: pointer;
+        border-style: none;
+        font-weight: 400;
+        padding: 5px 5px;
+        display: inline-block;
+        user-select: none;
+        margin: 0;
+        font-size: 15px;
+        background-color: #ff6900;
+        color: #fff;
+    }
+
+
+    .focus {
+        border: 1px solid red;
+    }
+
+    .cmp-formcontainer {
+        display: none;
+    }
+
+    input:required:focus {
+        border: 2px solid red;
+        outline: none;
+    }
+
+    #box {
+        background-color: white;
+        width: 80%;
+        padding: 5px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin: 15px;
+    }
+
+    .campo-texto {
+        width: 50%;
+    }
+
+    .invalido {
+        color: rgb(255, 90, 90);
+        display: none;
+        font-weight: bold;
+    }
+
+    #box label {
+        font-size: 20px;
+    }
+
+    .mobile #logo-img {
+        margin-bottom: 100px;
+    }
+
+    .box-page-success {
+        width: 200px;
+        height: 200px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    #box #btn {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-sizing: border-box;
+        margin-top: 50px;
+    }
+
+    .button-form {
+        border: none;
+        color: white;
+        background-color: #ff6900;
+        width: 150px;
+        height: 50px;
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+        align-items: center;
+
+    }
+
+    .bnt_botao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 50px;
+
+    }
+
+    .dados_check {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+    div .form-group {
+        display: flex;
+    }
+
+    .campo-texto {
+        padding: 5px;
+    }
+
+    .botao {
+        display: flex;
+    }
+
+
+    .form-group-text {
+        width: 100%;
+        display: none;
+
+    }
+
+
+    /* começo checkmark */
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-top: 15px;
+    }
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #ff6900;
+    }
+
+    .container:hover input~.checkmark {
+        background-color: #ff6900;
+    }
+
+    .container input:checked~.checkmark {
+        background-color: #ff6900;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .sucesso {
+        padding: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+    }
+
+
+
+
+
+
+    /* Media Query Tablets */
+
+    @media (max-width:800px) {
+        /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+
+        * {
+            margin: 3px;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 25px;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        #logo-img {
+            width: 100%;
+            max-width: 720px;
+        }
+
+        #text-info p {
+            font-size: 17px;
+        }
+
+        .container_contato>input {
+            border: 1px solid black;
+        }
+
+    }
+
+    @media (min-width: 375px) {
+
+        .container_contato>input {
+            width: 400px;
+            height: 50px;
+            border: 1px solid black;
+        }
+
+        .info {
+            width: 300px;
+        }
+
+        .dados_check {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dados_check>.container {
+            font-size: larger;
+        }
+
+    }
+</style>
+
+<body>
+    <main>
+        <div class="desktop">
+
+            <div class="desktop-main">
+                <div id="logo-img">
+                    <img src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/3/dbcdd8dc-1ce9-43fa-96c0-0cd915fabb39.gif"
+                        alt="Suvinil Logo" id="logo-header">
+                </div>
+
+                <div class='sucesso'>
+                    <h2>Muito obrigado pela sua contribuição, ela faz toda a diferença!</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

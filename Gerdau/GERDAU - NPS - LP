@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .logo{
+            text-align: left;
+            position: relative;
+            padding: 25px 40px 0px 40px;
+        }
+        
+        #logotype{
+            max-width: 15%;
+        }
+      
+        @media only screen and (max-width: 600px){
+            #logotype{
+            max-width: 25%;
+        }
+      }
+        
+        .title{
+            font-size: 26px;
+            padding-bottom: 24px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1C1C1C;
+        
+        }
+        
+        .title h1{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+        }
+        
+        .formularium{
+            margin-top: 32px;
+        }
+        
+        .page-body{
+            padding: 80px 140px 0 140px;
+            max-width: 896px;
+            margin: auto;
+            border: 0;
+        }
+        
+        table{
+            border-spacing: 0;
+        }
+        
+        .questionTitle{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: #1C1C1C;
+            line-height: 1.25;
+            padding: 0 0 24px 0;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .experience{
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 18px;
+        }
+        
+        .width-20{
+            width: 20%;
+        }
+        
+        .width-13{
+            width: 13.333333333333334%;
+        }
+        
+        .col-title{
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding: 3px;
+            vertical-align: bottom;
+            color: #1C1C1C;
+            font-weight: bold;
+        }
+        
+        .radio-align{
+            text-align: center;
+        
+        }
+        
+        .table-question{
+            display: block;
+            padding: 3px 0 3px 7px;
+            width: 18rem;
+            color: #1C1C1C;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.25;
+        }
+        
+        .radio-align input{
+            width: 1.5em;
+            height: 1.5em;
+        }
+        
+        .send{
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .send button{
+            width: 150px;
+            padding: 10px;
+            border: none;
+            -webkit-border-radius: 5px; 
+            -moz-border-radius: 5px; 
+            border-radius: 5px; 
+            background-color: #565854;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .colored{
+            background-color: rgba(238, 234, 234, 0.877);
+        }
+        
+        @media only screen and (max-width: 600px){
+            .radio-align{
+                display: flex;
+                margin: 5px 0;
+                padding: 5px 0;
+                border-radius: 4px;
+                text-align: left;
+                align-items: flex-end;
+            }
+        
+            .table-question{
+                display: inline-block;
+                padding-left: 0;
+                margin: 25px 0px 10px; 
+                border-radius: 4px;
+                background: transparent !important;
+            }
+        
+            .col-title{
+                display: none;
+            }
+        
+            .page-body{
+                padding: 40px 40px 0 40px;
+                margin: 0;
+            }
+        
+            .experience{
+                width: 100%;
+            }
+        
+            .experience td{
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+        
+            .responsive-form{
+                font-size: 14px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                padding: 3px;
+                vertical-align: bottom;
+                color: #333e48;
+            }
+        
+            
+        }
+        
+        @media only screen and (min-width: 601px){
+            .responsive-form{
+                display: none;
+            }
+        }
+        
+        @media only screen and (max-width: 768px) and (min-width: 601px){
+            .page-body{
+                padding: 80px 80px 0 80px;
+                margin: 0;
+            }
+        }
+        .caixa-experiencia{ display: flex;
+            align-items: left;
+            justify-content: center;
+            flex-direction: column;
+            flex: 1;
+        }
+        textarea{
+            resize: none;
+            width: 100%;
+            height: 7rem;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        </style>
+    <title>Pesquisa de Satisfação Gerdau</title>
+    <link rel="icon" type="imagem/png" href="https://logospng.org/download/gerdau/logo-gerdau-escudo-1024.png" />
+</head>
+
+<body>
+    <div class="logo">
+        <img src="https://cdn.v2v.net/0x0/5eece464-0472-410d-bbc9-7bbd353db743.png?v=63735966821"
+            id="logotype" alt="Logo Gerdau" />
+    </div>
+
+    <div class="page-body">
+        <div class="title">
+            <h1>Experiência Gerdau </h1>
+        </div>
+      %%[
+      set @email = requestparameter('email')
+      ]%%
+        <form action="http://cloud.e.gerdaunews.com/Agradecimento_Pesquisa_Satisfacao_PT">
+                <div class="formularium">
+                <div class="question1">
+                    <div class="questionTitle">
+                        <span>Pensando na sua experiência, como você avalia os pontos
+                            abaixo? *</span>
+                    </div>
+                    <input type="hidden" id="email" name="email" value="%%=v(@email)=%%">
+                    
+                    <table class="experience">
+                        <thead>
+                            <tr>
+                                <td class="width-20 col-title"></td>
+                                <td class="width-13 col-title">Péssimo</td>
+                                <td class="width-13 col-title">Ruim</td>
+                                <td class="width-13 col-title">Regular</td>
+                                <td class="width-13 col-title">Bom</td>
+                                <td class="width-13 col-title">Excelente</td>
+                                <td class="width-13 col-title">N/A</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="canais_tradicionais" class="table-question colored">
+                                    Experiência nos Canais Tradicionais (qualidade de atendimento das equipes: comercial, técnica e gestão de atendimento)
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_pessimo" name="option1" value="Pessimo" required/>
+                                    <label for="canais_tradicionais_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_ruim" name="option1" value="Ruim"/>
+                                    <label for="canais_tradicionais_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_regular" name="option1" value="Regular"/>
+                                    <label for="canais_tradicionais_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_bom" name="option1" value="Bom"/>
+                                    <label for="canais_tradicionais_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_excelente" name="option1" value="Excelente"/>
+                                    <label for="canais_tradicionais_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="canais_tradicionais_na" name="option1" value="N/A"/>
+                                    <label for="canais_tradicionais_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="canais_digitais" class="table-question">
+                                    Experiência nos Canais Digitais (Gerdau mais, processo de cotação, carteira de pedido, website, etc...)
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_pessimo" name="option2" value="Pessimo" required/>
+                                    <label for="canais_digitais_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_ruim" name="option2" value="Ruim"/>
+                                    <label for="canais_digitais_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_regular" name="option2" value="Regular"/>
+                                    <label for="canais_digitais_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_bom" name="option2" value="Bom"/>
+                                    <label for="canais_digitais_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_excelente" name="option2" value="Excelente"/>
+                                    <label for="canais_digitais_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="canais_digitais_na" name="option2" value="N/A"/>
+                                    <label for="canais_digitais_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="condicao_comercial" class="table-question colored">
+                                    Condições comerciais (Crédito, prazo de pagamento, preço, contribuição à performance de seu negócio)
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_pessimo" name="option3" value="Pessimo" required/>
+                                    <label for="condicao_comercial_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_ruim" name="option3" value="Ruim"/>
+                                    <label for="condicao_comercial_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_regular" name="option3" value="Regular"/>
+                                    <label for="condicao_comercial_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_bom" name="option3" value="Bom"/>
+                                    <label for="condicao_comercial_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_excelente" name="option3" value="Excelente"/>
+                                    <label for="condicao_comercial_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="condicao_comercial_na" name="option3" value="N/A"/>
+                                    <label for="condicao_comercial_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="qualidade" class="table-question">
+                                    Qualidade do Produto (performance e desenvolvimento de produtos, soluções e suporte técnico)
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_pessimo" name="option4" value="Pessimo" required/>
+                                    <label for="qualidade_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_ruim" name="option4" value="Ruim"/>
+                                    <label for="qualidade_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_regular" name="option4" value="Regular"/>
+                                    <label for="qualidade_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_bom" name="option4" value="Bom"/>
+                                    <label for="qualidade_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_excelente" name="option4" value="Excelente"/>
+                                    <label for="qualidade_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="qualidade_na" name="option4" value="N/A"/>
+                                    <label for="qualidade_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="atendimento" class="table-question colored">
+                                    Atendimento aos pedidos (prazos, follow up de ordens e entrega)
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_pessimo" name="option5" value="Pessimo" required/>
+                                    <label for="atendimento_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_ruim" name="option5" value="Ruim"/>
+                                    <label for="atendimento_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_regular" name="option5" value="Regular"/>
+                                    <label for="atendimento_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_bom" name="option5" value="Bom"/>
+                                    <label for="atendimento_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_excelente" name="option5" value="Excelente"/>
+                                    <label for="atendimento_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align colored">
+                                    <input type="radio" id="atendimento_na" name="option5" value="N/A"/>
+                                    <label for="atendimento_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                          <tr>
+                                <td id="solucao_reclamacoes" class="table-question">
+                                    Solução de dúvidas e reclamações
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_pessimo" name="option6" value="Pessimo" required/>
+                                    <label for="solucao_reclamacoes_pessimo" class="responsive-form">Péssimo</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_ruim" name="option6" value="Ruim"/>
+                                    <label for="solucao_reclamacoes_ruim" class="responsive-form">Ruim</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_regular" name="option6" value="Regular"/>
+                                    <label for="solucao_reclamacoes_regular" class="responsive-form">Regular</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_bom" name="option6" value="Bom"/>
+                                    <label for="solucao_reclamacoes_bom" class="responsive-form">Bom</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_excelente" name="option6" value="Excelente"/>
+                                    <label for="solucao_reclamacoes_excelente" class="responsive-form">Excelente</label>
+                                </td>
+                                <td class="radio-align">
+                                    <input type="radio" id="solucao_reclamacoes_na" name="option6" value="N/A"/>
+                                    <label for="solucao_reclamacoes_na" class="responsive-form">N/A</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="caixa-experiencia">
+                    <label for="experiencia" class="questionTitle"> Se necessário, descreva sua experiência abaixo:</label>
+                    <textarea id="experiencia" name="experiencia"> </textarea>
+                </div>
+                <div class="send">
+                    <button type="submit">ENVIAR</button>
+                </div>
+        </form>
+    </div>
+</body>
+
+</html>
