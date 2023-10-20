@@ -1,6 +1,6 @@
 %%[
-            SET @id = RequestParameter("id")
-            ]%%
+SET @id = RequestParameter("id")
+]%%
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,24 +18,25 @@
     text-align: center;
     width: 100%;
     margin: 0px 0;
-}
+  }
 
 
 
-#container {
-  width: 100%;
+  #container {
+    width: 100%;
     display: flex;
     justify-content: center;
-}
-        
+  }
 
-        #formPesquisa {
-            border: 1px solid #ccc;
-            padding: 20px;
-            background: #f9f9f9;
-        }
 
-  
+  #formPesquisa {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+
   * {
     margin: 0;
     padding: 0;
@@ -100,7 +101,7 @@
 
   /*formulario*/
 
-  
+
   .form {
 
     width: 300px;
@@ -117,8 +118,8 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: left;
   }
 
   .form-field-input {
@@ -135,6 +136,7 @@
     color: #4f4f4f;
     margin-right: -35px;
     margin-top: 5px;
+    align-items: left;
   }
 
   .form-group-text {
@@ -145,8 +147,8 @@
   .form-field-labels {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: stretch;
+    align-items: flex-start;
     width: 678px;
 
   }
@@ -205,8 +207,8 @@
     .form-field-labels {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: stretch;
+      align-items: stretch;
       width: 204px;
 
     }
@@ -258,8 +260,8 @@
     .form-field-labels {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: stretch;
+      align-items: stretch;
       width: 79%;
       margin-left: 20px;
     }
@@ -320,15 +322,15 @@
 
     .form-field p {
       font-size: 13px;
-      
+
     }
 
 
     .form-field-labels {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: stretch;
+      align-items: stretch;
       width: 79%;
       margin-left: 20px;
 
@@ -358,118 +360,117 @@
     </div>
     <!----Header------>
 
-      <div class="form-field-text" id="container">
+    <div class="form-field-text" id="container">
 
-        <p>
-          <br>
-          <br>
-          
-          Sua experiência e feedback são incrivelmente valiosos para nós. Ajude-nos a <br>
-          entender como podemos melhorar e atender às suas necessidades de forma<br>
-          ainda mais eficaz.
-          Sua participação nos ajuda a ser melhores! Por favor, <br>
-          responda às 3 perguntas abaixo: <br>
+      <p>
+        <br>
+        <br>
 
-        </p>
+        Sua experiência e feedback são incrivelmente valiosos para nós. Ajude-nos a <br>
+        entender como podemos melhorar e atender às suas necessidades de forma<br>
+        ainda mais eficaz.
+        Sua participação nos ajuda a ser melhores! Por favor, <br>
+        responda às 3 perguntas abaixo: <br>
+
+      </p>
 
 
-        <div class="form-field-text" id="titulo">
+
+    </div>
+    <div id="container">
+      <form id="formPesquisa" action="https://cloud.a.suvinil.com.br/agradecimento_pesquisa"
+        onsubmit="return validarFormulario()">
+        <input type="hidden" name="id" value="%%=v(@id)=%%">
+        <div class="form-field">
+          <p class="form-field-text" style="text-align: left;">1) Qual seu propósito usando esse produto?</p>
+          <input class="form-field-input" type="text" name="proposito_produto" placeholder="digite algo">
+
         </div>
 
-      </div>
-     <div id="container">
-      <form id="formPesquisa" action="https://cloud.a.suvinil.com.br/agradecimento_pesquisa" onsubmit="return validarFormulario()">
-          <input type="hidden" name="id" value="%%=v(@id)=%%">
-          <div class="form-field">
-            <p class="form-field-text">1) Qual seu propósito usando esse produto?</p>
-            <input class="form-field-input" type="text" name="proposito_produto" placeholder="digite algo">
+        <div class="form-field">
+          <p class="form-field-text">2) O quanto seu propósito foi atendido?
+          </p>
+
+          <div class="form-field-labels" name="proposito_atendido" value="Moro com meu parceiro/a e filhos">
+            <label>
+              <input type="radio" name="proposito_atendido" value="Superada">
+              Superada (Recebi mais do que esperava)
+            </label>
+            <label>
+              <input type="radio" name="proposito_atendido" value="Plenamente">
+              Plenamente atendida (Recebi tudo o que esperava)
+            </label>
+            <label>
+              <input type="radio" name="proposito_atendido" value="Atendida">
+              Atendida em grande parte (Coisas de pouca importância ficaram faltando)
+            </label>
+            <label>
+              <input type="radio" name="proposito_atendido" value="Parcialmente">
+              Parcialmente (Coisas relevantes não foram atendidas)
+            </label>
+            <label>
+              <input type="radio" name="proposito_atendido" value="Pouco">
+              Pouco (A maioria das minhas expectativas não foi atendida)
+            </label>
+            <label>
+              <input type="radio" name="proposito_atendido" value="Nada">
+              Nada (Nenhuma das necessidades foi atendida)
+            </label>
 
           </div>
+        </div>
 
-          <div class="form-field">
-            <p class="form-field-text">2) O quanto seu propósito foi atendido?
-            </p>
+        <div class="form-field">
+          <p class="form-field-text">3) Conte um pouco mais do que por que você nos deu essa nota.</p>
+          <input class="form-field-input" type="text" name="comentario_da_nota" placeholder="digite algo">
 
-            <div class="form-field-labels"  name="proposito_atendido" value="Moro com meu parceiro/a e filhos">
-              <label>
-                <input type="radio" name="proposito_atendido" value="Superada" >
-                Superada (Recebi mais do que esperava)
-              </label>
-              <label>
-                <input type="radio" name="proposito_atendido" value="Plenamente" >
-                Plenamente atendida (Recebi tudo o que esperava)
-              </label>
-              <label>
-                <input type="radio" name="proposito_atendido" value="Atendida" >
-                Atendida em grande parte (Coisas de pouca importância ficaram faltando)
-              </label>
-              <label>
-                <input type="radio"  name="proposito_atendido" value="Parcialmente" >
-                Parcialmente (Coisas relevantes não foram atendidas)
-              </label>
-              <label>
-                <input type="radio" name="proposito_atendido" value="Pouco" >
-                Pouco (A maioria das minhas expectativas não foi atendida)
-              </label>
-              <label>
-                <input type="radio" name="proposito_atendido" value="Nada" >
-                Nada (Nenhuma das necessidades foi atendida)
-              </label>
-
-            </div>
-          </div>
-
-          <div class="form-field">
-            <p class="form-field-text">3) Conte um pouco mais do que por que você nos deu essa nota.</p>
-            <input class="form-field-input" type="text" name="comentario_da_nota" placeholder="digite algo" >
-
-          </div>
+        </div>
 
 
-          <div id="invalido1" class="invalid-feedback  mb-4 invalido">Escolha uma das opções</div>
+        <div id="invalido1" class="invalid-feedback  mb-4 invalido">Escolha uma das opções</div>
 
-          <div class="botao-container">
-            <input type="submit" class="botao" value="Enviar respostas" style="font-size: 16px;">
+        <div class="botao-container">
+          <input type="submit" class="botao" value="Enviar respostas" style="font-size: 16px;">
 
-          </div>
+        </div>
 
 
-        </form>
-      </div>
+      </form>
+    </div>
 
-        <script>
-          function validarFormulario() {
-              var camposPreenchidos = true;
-              var campo1 = document.getElementsByName("proposito_produto")[0];
-              var campo2 = document.getElementsByName("comentario_da_nota")[0];
-              var opcoes = document.getElementsByName("proposito_atendido");
-  
-              if (campo1.value.trim() === "" || campo2.value.trim() === "") {
-                  camposPreenchidos = false;
-              }
-  
-              var opcaoSelecionada = false;
-              for (var i = 0; i < opcoes.length; i++) {
-                  if (opcoes[i].checked) {
-                      opcaoSelecionada = true;
-                      break;
-                  }
-              }
-  
-              if (!opcaoSelecionada) {
-                  camposPreenchidos = false;
-              }
-  
-              if (!camposPreenchidos) {
-                  alert("Por favor, preencha todos os campos do formulário.");
-                  return false; // Impede o envio do formulário
-              }
-  
-              return true; // Permite o envio do formulário se todos os campos estiverem preenchidos
+    <script>
+      function validarFormulario() {
+        var camposPreenchidos = true;
+        var campo1 = document.getElementsByName("proposito_produto")[0];
+        var campo2 = document.getElementsByName("comentario_da_nota")[0];
+        var opcoes = document.getElementsByName("proposito_atendido");
+
+        if (campo1.value.trim() === "" || campo2.value.trim() === "") {
+          camposPreenchidos = false;
+        }
+
+        var opcaoSelecionada = false;
+        for (var i = 0; i < opcoes.length; i++) {
+          if (opcoes[i].checked) {
+            opcaoSelecionada = true;
+            break;
           }
-      </script>
+        }
 
-    
+        if (!opcaoSelecionada) {
+          camposPreenchidos = false;
+        }
+
+        if (!camposPreenchidos) {
+          alert("Por favor, preencha todos os campos do formulário.");
+          return false; // Impede o envio do formulário
+        }
+
+        return true; // Permite o envio do formulário se todos os campos estiverem preenchidos
+      }
+    </script>
+
+
   </main>
 
 </body>
