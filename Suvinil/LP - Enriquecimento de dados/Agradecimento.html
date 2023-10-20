@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.suvinil.com.br/favicon.ico" type="image/x-icon">
+  <title>LP de Enriquecimento Suvinil</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 62.5%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .fundo {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/6967cf8e-b269-4a1b-8d20-3836ffe5aa0e.png');
+      /* Adicione o caminho da sua imagem de fundo aqui */
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .container {
+      display: flex;
+      width: 65%;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .title {
+      color: white;
+      font-family: 'Suvinil Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    h1 {
+      margin: 0 0 4rem 0;
+      padding: 0;
+      border: 0;
+      font-size: 6rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin: .5rem 0;
+      padding: 0;
+      border: 0;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .logo {
+      padding: 6rem 0 8rem 0;
+      width: 65%;
+
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fundo">
+    <div class="logo">
+      <img src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/a1719c45-067d-434a-84d1-335e644b3c01.png"
+        alt="logo">
+    </div>
+    %%[
+    SET @data_extension = "teste_lp_enriquecimento"
+
+    SET @id = RequestParameter("id")
+    SET @nome = RequestParameter("nome")
+    SET @segmento = RequestParameter("segmento")
+    SET @profissao = RequestParameter("profissao")
+    SET @telefone = RequestParameter("telefone")
+    SET @DataDeNascimento = RequestParameter("DataDeNascimento")
+    SET @estado = RequestParameter("estado")
+    SET @cidade = RequestParameter("cidade")
+    
+
+    IF NOT Empty(@id) THEN
+
+    SET @success = UpsertData(@data_extension, 1,
+    'id', @id,
+    'nome', @nome,s
+    'segmento', @segmento,
+    'profissao', @profissao,
+    'telefone', @telefone,
+    'DataDeNascimento', @DataDeNascimento,
+    'estado', @estado,
+    'cidade', @cidade,
+    'InsertDate', Now()
+    )
+    ENDIF
+
+    IF NOT Empty(@sucess) THEN
+    ]%%
+    <div class="container">
+      <div class="title">
+        <h1>Cadastro realizado com sucesso!</h1>
+        <h3>Obrigada por atualizar seu cadastro.</h3>
+        <h4>Agora é só aguardar para receber nossas comunicações pensadas em você.</h4>
+      </div>
+    </div>
+    %%[ELSE]%%
+    <div class="container">
+      <div class="title">
+        <h1>ALGO DEU ERRADO!</h1>
+        <h4>Infelizmente não podemos atualizar seu cadastro, por favor, tente novamente mais tarde.</h4>
+      </div>
+    </div>
+    %%[ENDIF]%%
+</body>
+
+</html>

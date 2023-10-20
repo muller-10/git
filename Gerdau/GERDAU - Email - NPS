@@ -240,7 +240,7 @@
                                         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
                                             <tr>
                                                 <!-- added padding here -->
-                                                <td class="content_padding" style="">
+                                                <td class="content_padding" style = "">
                                                     <!-- end of comment -->
                                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                         <tr> <!-- top slot -->
@@ -286,7 +286,7 @@
                                                                                                         cellspacing="0"
                                                                                                         cellpadding="0"
                                                                                                         align="center">
-                                                                                                      
+
                                                                                                     </table>
                                                                                                 </body>
 
@@ -559,7 +559,7 @@
                                                                                                         content="light dark" />
                                                                                                 </head>
 
-                                                                                                
+
 
                                                                                                 </html>
                                                                                             </td>

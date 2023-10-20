@@ -1,0 +1,422 @@
+]%%[
+SET @id = RequestParameter("id")
+]%%
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://www.suvinil.com.br/favicon.ico" type="image/x-icon">
+  <title>LP de Enriquecimento Suvinil</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 62.5%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .fundo {
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/6967cf8e-b269-4a1b-8d20-3836ffe5aa0e.png');
+      /* Adicione o caminho da sua imagem de fundo aqui */
+      background-size: cover;
+      background-position: center;
+    }
+
+
+    .container {
+      display: flex;
+      width: 65%;
+      height: 100%;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .title {
+      color: white;
+      font-family: 'Suvinil Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    h1 {
+      margin: 0 0 4rem 0;
+      padding: 0;
+      border: 0;
+      font-size: 6rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin: .5rem 0;
+      padding: 0;
+      border: 0;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-weight: 300;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .logo {
+      padding: 6rem 0 8rem 0;
+      width: 65%;
+
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .form-container form {
+      align-items: center;
+      justify-content: flex-start;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .form-container {
+      color: black;
+      font-family: 'Suvinil Sans', sans-serif;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .input-container {
+      margin: 1rem 0;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: .3rem;
+    }
+
+    .box-icon {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box-icon img {
+      max-width: 4rem;
+      max-height: 4rem;
+    }
+
+    .box-label {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    input,
+    select {
+      display: block;
+      flex: 1;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    label {
+      color: white;
+      font: 300 1.6rem 'Suvinil Sans', sans-serif;
+    }
+
+    .button-container {
+      height: 5rem;
+      width: 50%;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    button {
+      height: 3.5rem;
+      background: white;
+      color: orange;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+
+      background-color: #f59042;
+      color: white;
+    }
+
+    p {
+      color: white;
+      font-family: 'Suvinil Sans', sans-serif;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 425px) {
+      :root {
+        font-size: 40%;
+      }
+
+      .container {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .title {
+        height: 50%;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        font-size: 45%;
+      }
+
+      .container {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .fundo {
+        background-image: url('https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/d3781a86-e821-48bd-96b7-e52365bb2b84.png');
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        width: 80%;
+      }
+
+      .fundo {
+        background-image: url('https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/71a275b8-6098-4de1-933f-1384877eb079.png');
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="fundo">
+    <div class="logo">
+      <img src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/a1719c45-067d-434a-84d1-335e644b3c01.png"
+        alt="logo">
+    </div>
+    <div class="container">
+      <div class="title">
+        <h1>ATUALIZE SEU CADASTRO!</h1>
+        <h3>É RÁPIDO, É FÁCIL.</h3>
+        <h4>Precisamos te conhecer melhor para compartilhar<br>
+          comunicações mais interessantes e personalizadas.</h4>
+      </div>
+      <div class="form-container">
+        <form action="https://cloud.a.suvinil.com.br/agradecimento-enriquecimento-de-dados" method=" GET">
+          <input type="hidden" name="id" value="%%=v(@id)=%%">
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/e80d89c6-aff6-46c5-a2ce-3d5d1f4f1ad0.png"
+                id="nome">
+            </div>
+            <div class="box-label">
+              <label for="nome">Nome*</label>
+              <input type="text" id="nome" placeholder="" name="nome" required>
+            </div>
+          </div>
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/33e0a626-49ea-4d66-97f2-5148f3babed9.png"
+                id="segmento">
+            </div>
+            <div class="box-label">
+              <label for="seg">Perfil*</label>
+              <select type="text" id="segmento" placeholder="" name="segmento" required>
+                <option name="segmento" value="Arquiteto e Designer">Arquiteto e Designer</option>
+                <option name="segmento" value="B2B">B2B</option>
+                <option name="segmento" value="Consumidores">Consumidores</option>
+                <option name="segmento" value="Pintores">Pintores</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/1e229eaa-5956-4e5e-a715-62ba6142b702.png"
+                id="profissao">
+            </div>
+            <div class="box-label">
+              <label for="prof">Profissão</label>
+              <input type="text" id="profissao" placeholder="" name="profissao">
+            </div>
+          </div>
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/9ea8af89-43af-4c68-8002-ae049060a2a9.png"
+                id="telefone">
+            </div>
+            <div class="box-label">
+              <label for="tel">Telefone</label>
+              <input type="tel" maxlength="15" onkeyup="handlePhone(event)" placeholder="(xx) xxxxx-xxxx" name="telefone" />
+            </div>
+          </div>
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/8b56f059-5040-4c62-b22b-9d79e8e50380.png"
+                id="name">
+            </div>
+            <div class="box-label">
+              <label for="data">Data de Nascimento</label>
+              <input type="date" id="DataDeNascimento" placeholder=" "name="DataDeNascimento">
+            </div>
+          </div>
+
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/79287d67-588b-4ce7-807b-ca0cdb022e3b.png"
+                id="name">
+            </div>
+            <div class="box-label">
+              <label for="estado">Estado</label>
+              <select id="estado" name="estado" onchange="populateCities()">
+                <option id="estado" name="estado" value="">Selecione um estado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <div class="box-icon">
+              <img
+                src="https://image.a.suvinil.com.br/lib/fe331171756404787c1272/m/1/60523db8-25bf-4bc8-9f35-92ed254c59d3.png"
+                id="name">
+            </div>
+            <div class="box-label">
+              <label for="cidade">Cidade</label>
+              <select id="cidade" name="cidade">
+                <option id="cidade" name="cidade" value="">Selecione uma cidade</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="button-container">
+            <button type="submit">ATUALIZE OS DADOS</button>
+          </div>
+          <p>*Campos obrigatórios v2</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    var estadoSelect = document.getElementById('estado');
+    var cidadeSelect = document.getElementById('cidade');
+    var data;
+
+    // Função para carregar o JSON a partir do arquivo "cidades.json"
+    function loadJSON(callback) {
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'cidades.json', true);
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == 200) {
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
+
+    // Função para popular a lista de estados
+    function populateStates() {
+        data.estados.forEach(function(estado) {
+            var option = document.createElement('option');
+            option.value = estado.sigla;
+            option.textContent = estado.nome;
+            estadoSelect.appendChild(option);
+        });
+    }
+
+    // Função para popular a lista de cidades com base no estado selecionado
+    function populateCities() {
+        var estadoSelected = estadoSelect.value;
+        cidadeSelect.innerHTML = ''; // Limpa a lista de cidades
+
+        if (estadoSelected) {
+            var estadoData = data.estados.find(function(estado) {
+                return estado.sigla === estadoSelected;
+            });
+
+            if (estadoData) {
+                estadoData.cidades.forEach(function(cidade) {
+                    var option = document.createElement('option');
+                    option.value = cidade;
+                    option.textContent = cidade;
+                    cidadeSelect.appendChild(option);
+                });
+            }
+        }
+    }
+
+    // Carrega o JSON e popula os estados
+    loadJSON(function(response) {
+        data = JSON.parse(response);
+        populateStates();
+    });
+
+      // Mascara de telefone
+      const handlePhone = (event) => {
+      let input = event.target
+      input.value = phoneMask(input.value)
+    }
+    
+    const phoneMask = (value) => {
+      if (!value) return ""
+      value = value.replace(/\D/g,'')
+      value = value.replace(/(\d{2})(\d)/,"($1) $2")
+      value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+      return value
+    }
+    </script>
+</body>
+
+
+</html>

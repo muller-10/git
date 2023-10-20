@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário de Seleção de Cidade v1</title>
+</head>
+<body>
+    <form>
+        <label for="estado">Selecione um Estado v1:</label>
+        <select id="estado" onchange="populateCities()">
+            <option value="">Selecione um estado</option>
+        </select>
+
+        <label for="cidade">Selecione uma Cidade:</label>
+        <select id="cidade">
+            <option value="">Selecione um estado primeiro</option>
+        </select>
+    </form>
+
+    <script>
+        var estadoSelect = document.getElementById('estado');
+        var cidadeSelect = document.getElementById('cidade');
+        var data;
+
+        // Função para carregar o JSON a partir do arquivo "cidades.json"
+        function loadJSON(callback) {
+            var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'cidades.json', true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4 && xobj.status == 200) {
+                    callback(xobj.responseText);
+                }
+            };
+            xobj.send(null);
+        }
+
+        // Função para popular a lista de estados
+        function populateStates() {
+            data.estados.forEach(function(estado) {
+                var option = document.createElement('option');
+                option.value = estado.sigla;
+                option.textContent = estado.nome;
+                estadoSelect.appendChild(option);
+            });
+        }
+
+        // Função para popular a lista de cidades com base no estado selecionado
+        function populateCities() {
+            var estadoSelected = estadoSelect.value;
+            cidadeSelect.innerHTML = ''; // Limpa a lista de cidades
+
+            if (estadoSelected) {
+                var estadoData = data.estados.find(function(estado) {
+                    return estado.sigla === estadoSelected;
+                });
+
+                if (estadoData) {
+                    estadoData.cidades.forEach(function(cidade) {
+                        var option = document.createElement('option');
+                        option.value = cidade;
+                        option.textContent = cidade;
+                        cidadeSelect.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        // Carrega o JSON e popula os estados
+        loadJSON(function(response) {
+            data = JSON.parse(response);
+            populateStates();
+        });
+    </script>
+</body>
+</html>
